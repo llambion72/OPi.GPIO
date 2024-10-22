@@ -3,12 +3,12 @@
 # See LICENSE.md for details.
 
 """
-Alternative pin mappings for Orange PI 5
+Alternative pin mappings for Orange PI 5 PRO
 
 Usage:
 
 .. code:: python
-   from orangepi import pi5
+   from orangepi import pi5pro
    from OPi import GPIO
 
    GPIO.setmode(pi5pro.BOARD) or GPIO.setmode(pi5pro.BCM)
@@ -42,69 +42,70 @@ Usage:
 
 """
 
-# Orange Pi 5B physical board pin to GPIO pin
+# Orange Pi 5 PRO physical board pin to GPIO pin
 BOARD = {
-    3:  59,    # GPIO1_D3 UART4_RX_M0 I2C1_SDA_M4
-    5:  58,    # GPIO1_D2 UART4_TX_M0 I2C1_SCL_M4
-    7:  47,    # GPIO1_B7 UART1_RX_M1 I2C5_SCL_M3 PWM13_IR_M2
+    3:  59,    # GPIO1_D3 UART4_RX_M0    I2C1_SDA_M4
+    5:  58,    # GPIO1_D2 UART4_TX_M0    I2C1_SCL_M4
+    7:  47,    # GPIO1_B7 UART1_RX_M1    I2C5_SCL_M3    PWM13_IR_M2
     8:  13,    # GPIO4_A3 UART2_TX_M0
     10: 14,    # GPIO4_A4 UART2_RX_M0
-    11: 138,   # GPIO4_B2 PWM14_M1 CAN1_RX_M1
-    12: 39,    # GPIO0_D5 CAN2_TX_M1
-    13: 139,   # GPIO4_B3 CAN1_TX_M1             PWM15_IR_M1
-    15: 46,    # GPIO0_D4 PWM3_IR_M0 CAN2_RX_M1
-    16: 33,    # GPIO1_D3 UART4_RX_M0 I2C1_SDA_M4
-    18: 32,    # GPIO1_D2 UART4_TX_M0 I2C1_SCL_M4 PWM0_M1
-    19: 42,    # GPIO1_C1 I2C3_SCL_M0 UART3_TX_M0 SPI4_MOSI_M0
-    21: 41,    # GPIO1_C0 I2C3_SDA_M0 UART3_RX_M0 SPI4_MISO_M0
-    22: 40,    # GPIO2_D4
-    23: 43,    # GPIO1_C2 SPI4_CLK_M0
-    24: 44,    # GPIO1_C4 SPI4_CS1_M0
-    26: 45,    # GPIO1_A3 PWM1_M2
-    27: 34,    # GPIO1_A3 PWM1_M2
-    28: 35,    # GPIO1_A3 PWM1_M2
-    29: 36,    # GPIO1_A3 PWM1_M2
-    31: 38,    # GPIO1_A3 PWM1_M2
-    32: 62,    # GPIO1_A3 PWM1_M2
-    33: 63,    # GPIO1_A3 PWM1_M2
-    35: 135,   # GPIO1_A3 PWM1_M2
-    36: 131,   # GPIO1_A3 PWM1_M2
-    37: 134,   # GPIO1_A3 PWM1_M2
-    38: 132,   # GPIO1_A3 PWM1_M2
-    40: 133,   # GPIO1_A3 PWM1_M2
+    11: 138,   # GPIO4_B2 PWM14_M1    CAN1_RX_M1
+    12: 39,    # GPIO1_A7 PWM3_IR_M9
+    13: 139,   # GPIO4_B3 CAN1_TX_M1                   PWM15_IR_M1
+    15: 46,    # GPIO1_B6 UART1_RX_M1    I2C5_SCL_M3
+    16: 33,    # GPIO1_A1 UART6_RX_M1    SPI4_MOSI_M2
+    18: 32,    # GPIO1_A0 UART6_TX_M1    SPI4_MISO_M2
+    19: 42,    # GPIO1_B2 UART4_RX_M2    SPI0_MOSI_M2
+    21: 41,    # GPIO1_B1                SPI0_MISO_M2
+    22: 40,    # GPIO1_B0
+    23: 43,    # GPIO1_B3 UART4_TX_M1    SPI0_CLK_M2
+    24: 44,    # GPIO1_B4 UART4_TX_M1    SPI0_CLK_M2
+    26: 45,    # GPIO1_B5
+    27: 34,    # GPIO1_A2 
+    28: 35,    # GPIO1_A3
+    29: 36,    # GPIO1_A4 
+    31: 38,    # GPIO1_A6 
+    32: 62,    # GPIO1_D6 
+    33: 63,    # GPIO1_D7 
+    35: 135,   # GPIO4_A7 
+    36: 131,   # GPIO4_A3 
+    37: 134,   # GPIO4_A6 
+    38: 132,   # GPIO4_A4 
+    40: 133,   # GPIO4_A5 
 }
 
-# Orange Pi 5 pro physical board pin to WiringPi GPIO pin
+# Orange Pi 5 PRO physical board pin to WiringPi GPIO pin
 WIRINGPI = {
-    3:  0,   # SDA.1/GPIO1_D3
-    5:  1,   # SCL.1/GPIO1_D2
-    7:  2,   # PWM13/GPIO1_B7
-    8:  3,   # RXD.2/GPIO0_D1
-    10: 4,   # TXD.2/GPIO0_D0
-    11: 5,   # GPIO3_C6
-    12: 6,   # GPIO3_C7
-    13: 7,   # GPIO4_A0
-    15: 8,   # TXD.7/GPIO4_A2
-    16: 9,   # RXD.7/GPIO4_A3
-    18: 10,  # GPIO4_A1
-    19: 11,  # SPI3_TXD/GPIO4_B2
-    21: 12,  # SPI3_RXD/GPIO4_B0
-    22: 13,  # TXD.9/GPIO4_B1
-    23: 14,  # SPI3_CLK/GPIO4_B3
-    24: 15,  # SPI3_CS1/GPIO4_A6
-    26: 16,  # GPIO4_A7
-    27: 17,  # SDA.3/GPIO4_A0
-    28: 18,  # SCL.3/GPIO1_A1
-    29: 19,  # RXD.9/GPIO4_A5
-    31: 20,  # GPIO3_D4
-    32: 21,  # PWM11/GPIO4_C0
-    33: 22,  # GPIO3_D7
-    35: 23,  # GPIO3_D0
-    36: 24,  # GPIO3_D5
-    37: 25,  # GPIO3_D3
-    38: 26,  # GPIO3_D2
-    40: 27,  # GPIO3_D1
+    3:  0,   # GPIO1_D3 UART4_RX_M0    I2C1_SDA_M4
+    5:  1,   # GPIO1_D2 UART4_TX_M0    I2C1_SCL_M4
+    7:  2,   # GPIO1_B7 UART1_RX_M1    I2C5_SCL_M3    PWM13_IR_M2
+    8:  3,   # GPIO4_A3 UART2_TX_M0
+    10: 4,   # GPIO4_A4 UART2_RX_M0
+    11: 5,   # GPIO4_B2 PWM14_M1    CAN1_RX_M1
+    12: 6,   # GPIO1_A7 PWM3_IR_M9
+    13: 7,   # GPIO4_B3 CAN1_TX_M1                   PWM15_IR_M1
+    15: 8,   # GPIO1_B6 UART1_RX_M1    I2C5_SCL_M3
+    16: 9,   # GPIO1_A1 UART6_RX_M1    SPI4_MOSI_M2
+    18: 10,  # GPIO1_A0 UART6_TX_M1    SPI4_MISO_M2
+    19: 11,  # GPIO1_B2 UART4_RX_M2    SPI0_MOSI_M2
+    21: 12,  # GPIO1_B1                SPI0_MISO_M2
+    22: 13,  # GPIO1_B0
+    23: 14,  # GPIO1_B3 UART4_TX_M1    SPI0_CLK_M2
+    24: 15,  # GPIO1_B4 UART4_TX_M1    SPI0_CLK_M2
+    26: 16,  # GPIO1_B5
+    27: 17,  # GPIO1_A2
+    28: 18,  # GPIO1_A3
+    29: 19,  # GPIO1_A4
+    31: 20,  # GPIO1_A6 
+    32: 21,  # GPIO1_D6 
+    33: 22,  # GPIO1_D7 
+    35: 23,  # GPIO4_A7
+    36: 24,  # GPIO4_A3 
+    37: 25,  # GPIO4_A6 
+    38: 26,  # GPIO4_A4 
+    40: 27,  # GPIO4_A5
 }
 
 # No reason for BCM mapping, keeping it for compatibility
 BCM = BOARD
+
